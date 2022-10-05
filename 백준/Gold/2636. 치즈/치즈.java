@@ -45,9 +45,7 @@ public class Main {
 			
 			visited = new boolean[R][C];
 			bfs(0, 0);
-			
 			time++;
-
 			list.add(cnt);
 		}
 
@@ -82,17 +80,6 @@ public class Main {
 					visited[nr][nc] = true;
 				}
 			}
-		}
-
-
-	}
-
-	private static void p() {
-		for (int i = 0; i < R; i++) {
-			for (int j = 0; j < C; j++) {
-				System.out.print(map[i][j] + " ");
-			}
-			System.out.println();
 		}
 	}
 
