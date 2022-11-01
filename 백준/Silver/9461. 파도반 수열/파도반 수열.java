@@ -15,18 +15,15 @@ public class Main {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		T = Integer.parseInt(br.readLine());
 
-		arr[1] = 1;
-		arr[2] = 1;
-		arr[3] = 1;
-		arr[4] = 2;
-		arr[5] = 2;
+		arr[1] = arr[2] = arr[3] = 1;
+		arr[4] = arr[5] = 2;
 
 		for (int i = 6; i <= 100; i++) {
 			arr[i] = arr[i - 1] + arr[i - 5];
 		}
 
 		for (int i = 0; i < T; i++) {
-			sb.append(arr[(int) Long.parseLong(br.readLine())]).append("\n");
+			sb.append(arr[Integer.parseInt(br.readLine())]).append("\n");
 		}
 		System.out.println(sb);
 	}
