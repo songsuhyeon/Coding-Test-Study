@@ -1,18 +1,11 @@
-n = input().split('-')
+equtation = input().split('-')
+answer = 0
 
-result = 0
-add_num=[]
+for n in equtation[0].split('+'):
+    answer += int(n)
 
-for i in n:
-    a = i.split('+')
-    add = 0
-    for j in a:
-        add += int(j)
-    add_num.append(add)
+for e in equtation[1:]:
+    for n in e.split('+'):
+        answer -= int(n)
 
-sub = add_num[0]
-for i in range(1, len(add_num)):
-    sub -= add_num[i]
-
-print(sub)
-
+print(answer)
