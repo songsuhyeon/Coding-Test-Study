@@ -1,17 +1,19 @@
+import sys
 import heapq
 
 n = int(input())
+heap = []
 
-# 카드 묶음 별 크기
-size = []
-for i in range(n):
-    heapq.heappush(size, int(input()))
+for _ in range(n):
+    num = int(sys.stdin.readline())
+    heapq.heappush(heap, num)
 
-result = 0
-while len(size) > 1:
-    a = heapq.heappop(size)
-    b = heapq.heappop(size)
-    result += (a+b)
-    heapq.heappush(size, a+b)
+answer = 0
+while len(heap) != 1:
+    sum = heapq.heappop(heap)
+    top = heapq.heappop(heap)
+    sum += top
+    answer += sum
+    heapq.heappush(heap, sum)
 
-print(result)
+print(answer)
