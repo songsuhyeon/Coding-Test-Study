@@ -1,5 +1,4 @@
 def solution(arr):
-    answer = []
     try: 
         start = arr.index(2)
     except:
